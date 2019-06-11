@@ -1,0 +1,95 @@
+.form__input{
+    padding:10px 15px;
+}
+
+input::-webkit-calendar-picker-indicator{
+    display: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator{
+    visibility: hidden !important;
+}
+
+input[type=date]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    display: none;
+}
+
+
+
+label.insideText, input.insideText, label.inisdeText-age, input.insideText-age,label.insideText-currency, input.insideText-currency {
+    position: relative;
+    display: block;
+     text-align: right;
+    box-sizing: border-box;
+}
+
+input.insideText-currency {
+    padding-right:25px;
+}
+
+input.insideText-age{
+    padding-right:55px;
+}
+
+label.insideText-currency, input.insideText-currency{
+    position: relative;
+    display: block;
+    text-align: right;
+    box-sizing: border-box;
+}
+
+label.insideText::after {
+    content: '' attr(data-quarter);
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    font-family: arial, helvetica, sans-serif;
+    font-size: 12px;
+    display: block;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+}
+
+label.insideText-currency::after {
+    content: '' attr(data-currency);
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-family: arial, helvetica, sans-serif;
+    font-size: 12px;
+    display: block;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+}
+
+
+#calculator__form{
+    background-color: rgba(0, 0, 0, 0.08);
+    padding:50px 20px;
+    margin:20px 0;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius:10px;
+}
+
+#calculator__form input, #calculator__form select, #calculator__form button{
+    border-radius:0px;
+}
+
+.insideText , .calculated_age{
+    border:0px;
+    cursor: auto;
+}
+
+.insideText:focus , .calculated_age:focus, #calculator__form button:focus{
+    outline:none;
+    box-shadow: none;
+
+}
+
+.calculator__title{
+    margin-bottom: 50px;
+    font-family: 'Pacifico', cursive;
+    font-size:50px;
+}
+

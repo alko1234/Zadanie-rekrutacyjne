@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-json/2.6.0/jquery.json.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<div class="container container__background">
+    <div class="row">
+
+        <div class="col-8 offset-2">
+            <form id="calculator__form" method="POST" action="">
+
+
+                <div class="text-center">
+                    <h2 class="calculator__title">Formularz kalkulacyjny</h2>
+                </div>
+
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 form__input">
+                        <input type="text" name="fn" class="form-control" required placeholder="Imię">
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 form__input">
+                        <input type="text" name="ln" class="form-control" required placeholder="Nazwisko">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 form__input">
+                        <input type="tel" name="tel" class="form-control" required placeholder="Telefon">
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 form__input">
+                        <label class="insideText-currency" data-currency=" lat(a)">
+                        <input type="text" name="age" class="form-control calculated_age insideText-age" readonly
+                               placeholder="Wiek">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 form__input">
+                        <input type="date" name="bd" class="bd form-control" required
+                               placeholder="Data urodzenia">
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 form__input">
+                        <label class="insideText-currency" data-currency=" zł">
+                        <input type="number" name="expected_benefits" class="expected_benefits form-control insideText-currency"
+                               required
+                               placeholder="Oczekiwane świadczenia miesięczne">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 form__input">
+                        <label class="insideText-currency" data-currency=" zł">
+                        <input type="number" name="income" class="form-control insideText-currency" required placeholder="Dochód">
+                        </label>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 form__input">
+                        <select id="specialization" name="specialization" class="form-control">
+                            <option selected>Specjalizacja</option>
+                            <option>...</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xl-4 offset-xl-0 col-lg-6 col-md-6 form__input p-1">
+                        <label class="insideText" data-quarter="Składka Kwartalna: ">
+                            <input type="text" name="quarter" class="form-control quarter insideText" required
+                                   readonly
+                                   placeholder="0 zł"/>
+                        </label>
+                    </div>
+                    <div class="col-xl-4 offset-xl-0 col-lg-6 col-md-6 form__input p-1">
+                        <label class="insideText" data-quarter="Składka półroczna: ">
+                            <input type="text" name="half_year" class="form-control  half_year insideText"
+                                   required
+                                   readonly
+                                   placeholder="0 zł"/>
+                        </label>
+                    </div>
+                    <div class="col-xl-4 offset-xl-0 col-lg-6 offset-lg-3 col-md-8 offset-md-2 form__input p-1">
+                        <label class="insideText" data-quarter="Wpłata jednorazowa: ">
+                            <input type="text" name="one_time" class="form-control one_time insideText" required
+                                   readonly
+                                   placeholder="0 zł"/>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <span class="content"></span>
+                </div>
+
+                <div class="row">
+                    <div class="col-xl-4 offset-xl-4 col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-4 offset-sm-4 col-6 offset-3">
+                        <button type="submit" name="submit" class="form-control text-center submit">
+                            Wyślij
+                        </button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <p class="modal_content"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default form-control" data-dismiss="modal">Zamknij</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
